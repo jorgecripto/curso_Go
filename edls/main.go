@@ -1,29 +1,31 @@
 package main
 
-//file types
-const (
-	fileRegular int = iota
-	fileDirectory
-	fileExecutable
-	fileCompress
-	fileImage
-	fileLink
-)
-
-//file extensions
-
-const (
-	exe string = ".exe"
-	deb string = ".deb"
-	zip string = ".zip"
-	gz  string = ".gz"
-	tar string = ".tar"
-	rar string = ".rar"
-	png string = ".png"
-	jpg string = ".jpg"
-	gif string = ".gif"
+import (
+	"flag"
+	"fmt"
 )
 
 func main() {
+
+	//filter pattern flags
+
+	flagPattern := flag.String("p", "", "Filter by pattern")
+	flagAll := flag.Bool("a", false, "All files include hidden files")
+	flagNumberRecords := flag.Int("n", 0, "Number of records")
+
+	//order files flags
+
+	hasOrderByTime := flag.Bool("t", false, "Sort by time, oldest to newest")
+	hasOrderBySize := flag.Bool("s", false, "Sort by file size, smallest to biggest")
+	hasOrderReverse := flag.Bool("r", false, "Reverse order of sorting")
+
+	flag.Parse()
+
+	fmt.Println("Pattern:", *flagPattern)
+	fmt.Println("All:", *flagAll)
+	fmt.Println("NumberRecords:", *flagNumberRecords)
+	fmt.Println("OrderByTime:", *hasOrderByTime)
+	fmt.Println("OrderBySize:", *hasOrderBySize)
+	fmt.Println("Orderreverse", *hasOrderReverse)
 
 }

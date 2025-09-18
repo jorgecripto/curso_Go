@@ -19,10 +19,10 @@ func main() {
 
 	//Also, you can define the var inside the flow control.
 
-	if animal := "🐱"; animal == "🐕"  {
-		fmt.Printf("It is a %s\n", animal)		
+	if animal := "🐹"; animal == "🐕"  {
+		fmt.Printf("It is a Dog %s\n", animal)		
 	} else if animal == "🐱" {
-		fmt.Printf("It is a %s\n", animal)
+		fmt.Printf("It is a Cat %s\n", animal)
 	} else {
 		fmt.Println("This is not a domestic animal")
 	}
@@ -52,7 +52,7 @@ func main() {
 	}
 
 	var usAge uint8 = 20
-	usBar := false
+	usBar := true
 	colombianBar := false
 
 	switch {

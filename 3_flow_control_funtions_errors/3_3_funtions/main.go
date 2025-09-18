@@ -34,6 +34,12 @@ func main() {
 
 	greet()
 
+	// You can use the anonymous function this way
+
+	func(){
+		fmt.Println("This is a self-executing function.")
+	}()
+
 }
 
 func sum(a, b int) int {

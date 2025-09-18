@@ -21,6 +21,19 @@ func main() {
 	newValuesResult := filter(values, lessThanEighty)
 	fmt.Println(newValuesResult)
 
+	// here, we call the function plus.
+
+	fmt.Println(plus(2, 5, 9))
+	fmt.Println(plus(252, 5879, 25, 598, 2635))
+
+	// Anonymous function.
+
+	greet := func(){
+	fmt.Println("✋ Hello my love, I am learning Go")
+	}
+
+	greet()
+
 }
 
 func sum(a, b int) int {
@@ -53,3 +66,18 @@ func lessThanEighty(value int) bool  {
 	return value < 80
 	
 }
+
+// Variatic and anonymous functions: Let´s go back to our function sum but in this case we want
+// to have more numbers within the function.
+
+func plus(numbers ...int) int {  //we call this function in the function main
+	var total int
+
+	for _, number := range numbers {
+		total += number
+		
+	}
+	return total
+}
+
+// The anonymous function will be called within of the main. So, Let´s scroll up.
